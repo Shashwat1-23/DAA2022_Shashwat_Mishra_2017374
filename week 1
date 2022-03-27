@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    for(int i=0;i<t;i++)
+    {
+        int n;
+        scanf("%d",&n);
+        int a[n];
+        for(int j=0;j<n;j++)
+        {
+            scanf("%d",&a[j]);
+        }
+        int key,flag=0,l=0,r=n-1;
+        scanf("%d",&key);
+        while(l<=r)
+        {
+            int mid=l+(r-l)/2;
+            if(a[mid]==key)
+            {
+                flag=1;
+                printf("%d",mid);
+                break;
+            }
+            if(key<a[mid])
+            {
+                r=mid-1;
+            }
+            else
+            l=mid+1;
+        }
+        if(flag==0)
+        {
+            printf("Not Found");
+        }
+    }
+}
